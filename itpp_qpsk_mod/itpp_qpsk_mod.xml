@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="itpp_qpsk_mod" xml:lang="en"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+
+	<refnamediv>
+		<refname>itpp_qpsk_mod</refname>
+
+		<refpurpose>QPSK modulation</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+
+		<synopsis> a = itpp_qpsk_mod(b)</synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+
+		<title>Parameters</title>
+
+		<variablelist>                                                                            
+			<varlistentry><term>a:</term>
+				<listitem><para> output single dimension complex array.</para></listitem></varlistentry>      
+                         <varlistentry><term>b:</term>        
+				<listitem><para> input single dimension binary array of {0,1}.</para></listitem></varlistentry>          
+		</variablelist>
+
+	</refsection>
+
+
+
+	<refsection>
+		<title>Description</title>
+
+		<para>QPSK modulator.
+
+This is a special version of the PSK modulator with <latex>M = 4</latex> constellation points. Symbol numbering is counter clockwise starting from the real axis. Bits are Gray coded onto symbols. Symbol energy is normalized to 1.
+		</para>
+
+		<para>It is expected that the user inputs a single dimension binary matrix of (0,1) in scilab engine while calling the itpp_qpsk_mod() and expect the function to return a single dimension complex matrix as output in scilab console.
+		</para>
+		
+	</refsection>
+
+	<refsection>
+		<title>Examples</title>
+
+		<programlisting role="example">b=[0 0 0 1 1 0 1 1];&#10;a=itpp_qpsk_mod(b)</programlisting>
+	</refsection>
+
+	<refsection>
+		<title>Authors</title>
+
+		<simplelist type="vert">
+			<member>Aishwarya Tripathi</member>
+		</simplelist>
+	</refsection>
+</refentry>

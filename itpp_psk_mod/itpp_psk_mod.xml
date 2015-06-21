@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="itpp_psk_mod" xml:lang="en"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+
+	<refnamediv>
+		<refname>itpp_psk_mod</refname>
+
+		<refpurpose>PSK modulation</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+
+		<synopsis> a = itpp_psk_mod(b,c)</synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+
+		<title>Parameters</title>
+
+		<variablelist>                                                                            
+			<varlistentry><term>a:</term>
+				<listitem><para> output single dimension complex array.</para></listitem></varlistentry>      
+                         <varlistentry><term>b:</term>        
+				<listitem><para> input single dimension array of {0,1}.</para></listitem></varlistentry>   
+			<varlistentry><term>c:</term>        
+				<listitem><para> input integer that should be a power of 2.</para></listitem></varlistentry>        
+		</variablelist>
+
+	</refsection>
+
+
+
+	<refsection>
+		<title>Description</title>
+
+		<para>M-ary PSK modulator. </para>
+	
+		<para>This function implements the M-ary PSK modulator with<latex>M = 2^k</latex> constellation points, where <latex>k = 1, 2, \ldots </latex>. The symbol numbering is counter clockwise starting from the real axis, i.e. symbol <latex>(1, 0)</latex>. The bitmap is Gray encoded. The symbol energy is normalized to 1.
+		</para>
+
+		<para>It is expected that the user inputs a single dimension binary matrix of (0,1) and an integer m(power of 2) in scilab engine while calling the itpp_bpsk_mod() function and expect the function to return a single dimension complex matrix as output in scilab console.
+		</para>
+		
+	</refsection>
+
+	<refsection>
+		<title>Examples</title>
+
+		<programlisting role="example">b=[1 0 0 1 1 1];&#10;c=4;&#10;a=itpp_psk_mod(b,c)</programlisting>
+	</refsection>
+
+	<refsection>
+		<title>Authors</title>
+
+		<simplelist type="vert">
+			<member>Aishwarya Tripathi</member>
+		</simplelist>
+	</refsection>
+</refentry>

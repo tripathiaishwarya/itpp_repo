@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="itpp_crc_decode" xml:lang="en"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+
+	<refnamediv>
+		<refname>itpp_crc_decode</refname>
+
+		<refpurpose>CRC Decoding</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+
+		<synopsis> a = itpp_crc_decode(b,c)</synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+
+		<title>Parameters</title>
+
+		<variablelist>                                                                            
+			<varlistentry><term>a:</term>
+				<listitem><para> output single dimension binary encoded array of {0,1}.</para></listitem></varlistentry>      
+                         <varlistentry><term>b:</term>        
+				<listitem><para> input single dimension binary array of {0,1}.</para></listitem></varlistentry>   
+			<varlistentry><term>c:</term>        
+				<listitem><para> input string.</para></listitem></varlistentry>        
+		</variablelist>
+
+	</refsection>
+
+
+
+	<refsection>
+		<title>Description</title>
+
+		<para>CRC Decoding. </para>
+	
+		<para>The function decodes the input bit stream using the CRC Decoding scheme
+		</para>
+
+		<para>It is expected that the user inputs an encoded binary array of (0,1) and string(defining the CRC encoding scheme) while calling the itpp_crc_decode() function and expect the function to return a binary array of (0,1) as decoded output in scilab console.
+		</para>
+		
+	</refsection>
+
+	<refsection>
+		<title>Examples</title>
+
+		<programlisting role="example">b=[1 0 0 1 1 0 1 1 0 0];&#10;c='CRC-4';&#10;a=itpp_crc_decode(b,c)</programlisting>
+	</refsection>
+
+	<refsection>
+		<title>Authors</title>
+
+		<simplelist type="vert">
+			<member>Aishwarya Tripathi</member>
+		</simplelist>
+	</refsection>
+</refentry>

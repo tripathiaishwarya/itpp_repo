@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refentry version="5.0-subset Scilab" xml:id="itpp_bpsk_mod" xml:lang="en"
+					xmlns="http://docbook.org/ns/docbook"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svg="http://www.w3.org/2000/svg"
+					xmlns:ns3="http://www.w3.org/1999/xhtml"
+					xmlns:mml="http://www.w3.org/1998/Math/MathML"
+					xmlns:db="http://docbook.org/ns/docbook">
+
+	<refnamediv>
+		<refname>itpp_bpsk_mod</refname>
+
+		<refpurpose>BPSK modulation</refpurpose>
+	</refnamediv>
+
+	<refsynopsisdiv>
+		<title>Calling Sequence</title>
+
+		<synopsis> a = itpp_bpsk_mod(b)</synopsis>
+	</refsynopsisdiv>
+	
+	<refsection>
+
+		<title>Parameters</title>
+
+		<variablelist>                                                                            
+			<varlistentry><term>a:</term>
+				<listitem><para> output single dimension array of {-1,1}.</para></listitem></varlistentry>      
+                         <varlistentry><term>b:</term>        
+				<listitem><para> input single dimension array of {0,1}.</para></listitem></varlistentry>          
+		</variablelist>
+
+	</refsection>
+
+
+
+	<refsection>
+		<title>Description</title>
+
+		<para>BPSK modulator with real symbols.This is a special version of the PSK modulator with 
+<latex>
+M = 2 
+</latex>
+constellation points.The following bit to symbol mapping is used:
+<itemizedlist>
+    <listitem> 0 &#8594; 1</listitem>
+    <listitem> 1 &#8594; -1</listitem>
+</itemizedlist>
+</para>
+
+		<para>It is expected that the user inputs a single dimension binary matrix of (0,1) in scilab engine while calling the itpp_bpsk_mod() and expect the function to return a single dimension matrix as output in scilab console.
+
+		</para>
+		
+	</refsection>
+
+	<refsection>
+		<title>Examples</title>
+
+		<programlisting role="example">b=[1 0 1 0 1];&#10;a=itpp_bpsk_mod(b)</programlisting>
+	</refsection>
+
+	<refsection>
+		<title>Authors</title>
+
+		<simplelist type="vert">
+			<member>Aishwarya Tripathi</member>
+		</simplelist>
+	</refsection>
+</refentry>
