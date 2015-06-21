@@ -1,9 +1,0 @@
-*.cpp~
-*.sce~
-*.xml~
-loader.sce
-cleaner.sce
-master_help.xml
-libskeleton_cpp.c
-libskeleton_cpp.so
-scilab_*_help
