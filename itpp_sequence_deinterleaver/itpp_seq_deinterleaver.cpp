@@ -1,81 +1,67 @@
 /*----------------------------------------------------------------------------------------------------------------
-Code for Sequence Inteleaver
+Code for Sequence Deinteleaver
 Aishwarya Tripathi
-June 8,2015
+June 10,2015
 ----------------------------------------------------------------------------------------------------------------*/
 
 
 /*I/O format of the code for scilab engine
 * 
-* <outputComplexVector> = itpp_psk_mod(<binaryInputBitStream>,<integer m>)
+* <outputDeinterleavedSymbols> = itpp_seq_deinterleaver(<inputInterleavedstream>,<interleaver_depth>)
 *
-* The code interfaces the function PSK(int m).modulate_bits(bvec <inputVector>) of ITPP toolbox with the scilab engine.
+* The code interfaces the function Sequence_Interleaver().deinterleave() of ITPP toolbox with the scilab engine.
 *
 * ITPP toolbox function description : 
 *-----------------------------------
-* The input to the modulate_bits() function is a binary vector and an integer M (should be a power of 2) defining M-ary behaviour of PSK, 
-* and the output is a complex vector.
+* The input to the deinterleave() function is an interleaved stream and an integer interleaver depth of interleaver sequence, 
+* and the output is the deinterleaved vector.
 * 
 *
 * Input/Output Details : 
 *----------------------
-* It is expected that the user inputs a single dimension binary matrix of (0,1) and an integer m in scilab engine while calling the
-* itpp_bpsk_mod() function and expect the function to return a single dimension complex matrix as output in scilab console.
+* It is expected that the user inputs a array of interleaved symbols and an integer interleaver_depth in scilab engine while calling the
+* itpp_seq_deinterleaver() function and expect the function to return the deinterleaved vector as output in scilab console.
 */
 
 /***********Sample I/O in scilab console******************
--->a=[1 0 0 1 1 0 1 1 1]
+-->b=[3 4 1 2 7 8 5 6];
+ 
+-->c=4;
+ 
+-->a=itpp_seq_deinterleaver(b,c)
  a  =
  
-    1.    0.    0.    1.    1.    0.    1.    1.    1.  
- 
--->b=8
- b  =
- 
-    8.  
- 
--->c=itpp_psk_mod(a,b)
- c  =
- 
-    0.7071068 - 0.7071068i  - 1.  - 0.7071068 - 0.7071068i  
+    1.    2.    3.    4.    5.    6.    7.    8.  
  
 */
 
 
-#include <numeric>
 #include <itpp/base/vec.h>
-#include <itpp/itcomm.h>
-#include <itpp/itbase.h>
 #include <itpp/comm/interleave.h>
 
 using namespace itpp;
-using namespace std;
 
 extern "C"
 {
 #include "api_scilab.h"
 #include "Scierror.h"
-#include "BOOL.h"
 #include <localization.h>
-#include "MALLOC.h"
-#include <itpp/base/vec.h>
+
 
 /*=================================================================*/
 
-int itpp_seq_interleave(char *fname, unsigned long fname_len)
+int itpp_seq_deinterleaver(char *fname, unsigned long fname_len)
 {
 	//Error management variable
 	SciErr sciErr;
 
 
 	//Variable declaration
-	int m1=0,n1=0,m2=0,n2=0,m3=0,n3=0,i=0,row1=1,col1=1,row2=1,col2=1; 
+	int m1=0,n1=0,m2=0,n2=0,i=0,row=1,col=1; 
 	int *piAddressVar1 = NULL;
 	int *piAddressVar2 = NULL;
-	int *piAddressVar3 = NULL;
 	double *matrixOfInputSymbols = NULL;
-	double *matrixOfSequenceInterleavedSymbols = NULL;
-	double *matrixOfInterleaverSequence = NULL;
+	double *matrixOfSequenceDeinterleavedSymbols = NULL;
 	double *in_interleaver_depth = NULL;
 		
 	
@@ -132,7 +118,7 @@ int itpp_seq_interleave(char *fname, unsigned long fname_len)
 	}*/
 
 
-	/*//------------------------------For second arguement(In Interleaver depth)-------------------------------
+	//------------------------------For second arguement(In Interleaver depth)-------------------------------
 
 	//Getting address
 	sciErr = getVarAddressFromPosition(pvApiCtx, 2, &piAddressVar2);
@@ -167,13 +153,11 @@ int itpp_seq_interleave(char *fname, unsigned long fname_len)
 		return 0;
 	}
 
-	*/
 
 
-
-	//-------------------------For Third Input Arguement (Interleaver Sequence)----------------------------- 
+	/*//-------------------------For Third Input Arguement (Interleaver Sequence)----------------------------- 
 	//Getting address
-	sciErr = getVarAddressFromPosition(pvApiCtx, 2, &piAddressVar3);
+	sciErr = getVarAddressFromPosition(pvApiCtx, 3, &piAddressVar3);
     	if (sciErr.iErr)
     	{
         	printError(&sciErr, 0);
@@ -202,79 +186,52 @@ int itpp_seq_interleave(char *fname, unsigned long fname_len)
 		Scierror(999, _("%s: Single row or column vector expected.\n"), fname, 1);
 		return 0;
 	}
-
-
+	
+	*/
 		
 	//-------------------------------Implementation of Sequence Interleaving------------------------------
 	//Declaring input and output vectors for interleaving 
 	vec inputVector, outputVector;
-	ivec interSeq;
+	//ivec interSeq;	
 
 
 	//Invoking the PSK modulation function
+	
 	inputVector = itpp::vec(vec(matrixOfInputSymbols, m1 * n1));
-	interSeq = itpp::to_ivec(vec(matrixOfInterleaverSequence, m3 * n3));
-	Sequence_Interleaver<double> seq_inter( interSeq );
-	seq_inter.set_interleaver_sequence (interSeq);
-	//seq_inter.randomize_interleaver_sequence();
-	//interSeq = seq_inter.get_interleaver_sequence();
-	outputVector = seq_inter.interleave(inputVector);
+	//interSeq = itpp::to_ivec(vec(matrixOfInterleaverSequence, m3 * n3));
+
+	Sequence_Interleaver<double> seqInter(*in_interleaver_depth);	
+	//seqInter.set_interleaver_sequence (interSeq);
+	outputVector = seqInter.deinterleave(inputVector, 1);
 
 
 	//----------------------------------------Output Arguements---------------------------------------
-	//For output arguement 1(Interleaved Sequence)
 	//Storing the output in a double array to be sent to scilab
-	matrixOfSequenceInterleavedSymbols = (double *) malloc( sizeof(double)*outputVector.length());
+	matrixOfSequenceDeinterleavedSymbols = (double *) malloc( sizeof(double)*outputVector.length());
 	for( i=0; i<outputVector.length(); i++ )
-		matrixOfSequenceInterleavedSymbols[i] = outputVector(i);
+		matrixOfSequenceDeinterleavedSymbols[i] = outputVector(i);
 
 
 	//Defining the no. of rows and columns in matrix to be sent as output
 	if( n1 == 1 )
-		row1 = outputVector.length();
+		row = outputVector.length();
 	else
-		col1 = outputVector.length();	
+		col = outputVector.length();	
 
 
 	//Creating Output Modulated Signal
-	sciErr = createMatrixOfDouble(pvApiCtx, nbInputArgument(pvApiCtx) + 1, row1, col1, matrixOfSequenceInterleavedSymbols);	 
+	sciErr = createMatrixOfDouble(pvApiCtx, nbInputArgument(pvApiCtx) + 1, row, col, matrixOfSequenceDeinterleavedSymbols);	 
     	if (sciErr.iErr)
     	{
         	printError(&sciErr, 0);
         	return 0;
     	}
-	free(matrixOfSequenceInterleavedSymbols); 
+	free(matrixOfSequenceDeinterleavedSymbols); 
 
-
-	/*//For output arguement 2(Interleaver Sequence used)
-	//Storing the output in a double array to be sent to scilab
-	matrixOfInterleaverSequence = (double *) malloc( sizeof(double)*interSeq.length());
-	for( i=0; i<interSeq.length(); i++ )
-		matrixOfInterleaverSequence[i] = interSeq(i);
-
-
-	//Defining the no. of rows and columns in matrix to be sent as output
-	if( n1 == 1 )
-		row2 = interSeq.length();
-	else
-		col2 = interSeq.length();	
-
-
-	//Creating Output Modulated Signal
-	sciErr = createMatrixOfDouble(pvApiCtx, nbInputArgument(pvApiCtx) + 2, row2, col2, matrixOfInterleaverSequence);	 
-    	if (sciErr.iErr)
-    	{
-        	printError(&sciErr, 0);
-        	return 0;
-    	}
-	free(matrixOfInterleaverSequence); 	
-	*/
 
 	//-------------------------------Returning output arguements to Scilab----------------------------
 
 	AssignOutputVariable(pvApiCtx, 1) = nbInputArgument(pvApiCtx) + 1;
-	//AssignOutputVariable(pvApiCtx, 2) = nbInputArgument(pvApiCtx) + 2;
-	
 	ReturnArguments(pvApiCtx);
 	return 0;
 }

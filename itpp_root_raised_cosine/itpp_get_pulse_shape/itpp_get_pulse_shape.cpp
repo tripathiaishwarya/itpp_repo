@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------------------------------------------------
-Code for BPSK Modulation
+Code for Root raised cosine, get pulse shape
 Aishwarya Tripathi
-June 2,2015
+June 10,2015
 ----------------------------------------------------------------------------------------------------------------*/
 
 
@@ -234,7 +234,7 @@ int itpp_get_pulse_shape(char *fname, unsigned long fname_len)
 	}
 
 
-	//Checking if filter length is not an integer
+	//Checking if upsampling factor is not an integer
 	if((*upsampling_factor - floor(*upsampling_factor)) != 0)
 	{
 		Scierror(999, _("%s: Integer input expected.\n"), fname, 1);
