@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<refentry version="5.0-subset Scilab" xml:id="itpp_get_pulse_shape" xml:lang="en"
+<refentry version="5.0-subset Scilab" xml:id="rrc_shape_symbols" xml:lang="en"
 					xmlns="http://docbook.org/ns/docbook"
 					xmlns:xlink="http://www.w3.org/1999/xlink"
 					xmlns:svg="http://www.w3.org/2000/svg"
@@ -8,15 +8,15 @@
 					xmlns:db="http://docbook.org/ns/docbook">
 
 	<refnamediv>
-		<refname>itpp_get_pulse_shape</refname>
+		<refname>rrc_shape_symbols</refname>
 
-		<refpurpose>Root Raised Cosine get pulse shape</refpurpose>
+		<refpurpose>Root Raised Cosine shape symbols</refpurpose>
 	</refnamediv>
 
 	<refsynopsisdiv>
 		<title>Calling Sequence</title>
 
-		<synopsis> a = itpp_get_pulse_shape(b,c,d)</synopsis>
+		<synopsis> a = rrc_shape_symbols(b,c,d,e)</synopsis>
 	</refsynopsisdiv>
 	
 	<refsection>
@@ -26,11 +26,13 @@
 		<variablelist>                                                                            
 			<varlistentry><term>a:</term>
 				<listitem><para> Output pulse shape vector.</para></listitem></varlistentry>      
-                         <varlistentry><term>b:</term>        
+			<varlistentry><term>b:</term>        
+				<listitem><para> Input symbols vec of {-1,1}.</para></listitem></varlistentry>
+                         <varlistentry><term>c:</term>        
 				<listitem><para> Roll off factor(non zero).</para></listitem></varlistentry>   
-			<varlistentry><term>c:</term>        
-				<listitem><para> integer filter length.</para></listitem></varlistentry>  
 			<varlistentry><term>d:</term>        
+				<listitem><para> integer filter length.</para></listitem></varlistentry>  
+			<varlistentry><term>e:</term>        
 				<listitem><para> integer upsampling factor.</para></listitem></varlistentry>        
 		</variablelist>
 
@@ -41,11 +43,11 @@
 	<refsection>
 		<title>Description</title>
 
-		<para>Root Raised Cosine get pulse shape</para>
+		<para>Root Raised Cosine shape symbols</para>
 	
-		<para>The function get_pulse_shape() gives the shape of the pulse which will be further used in upsampling and shaping of the input signal</para>
+		<para>The function shape_symbols() shapes the the input symbols performing upsampling.</para>
 
-		<para> It is expected that the user inputs roll off factor, filter length and upsampling factor in scilab engine while calling the itpp_get_pulse_shape() function and expect the function to return pulse shape vector as output in scilab console.
+		<para> It is expected that the user inputs input symbols vector of {1,-1,} roll off factor, filter length and upsampling factor in scilab engine while calling the rrc_shape_symbols() function and expect the function to return pulse shape vector as output in scilab console.
 		</para>
 		
 	</refsection>
@@ -53,7 +55,7 @@
 	<refsection>
 		<title>Examples</title>
 
-		<programlisting role="example">b=0.5;&#10;c=6;&#10;d=8;&#10;a=itpp_get_pulse_shape(b,c,d)</programlisting>
+		<programlisting role="example">b=[-1 1 -1 1 -1];&#10;c=0.5;&#10;d=6;&#10;e=8&#10;a=rrc_shape_symbols(b,c,d,e)</programlisting>
 	</refsection>
 
 	<refsection>

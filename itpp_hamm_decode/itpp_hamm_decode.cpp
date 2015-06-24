@@ -7,7 +7,7 @@ June 1,2015
 
 /*I/O format of the code for scilab engine
 * 
-* <outputBitStream> = itpp_hamm_decode(<InputBitStream>,<integer m>)
+* <outputBitStream> = hamm_decode(<InputBitStream>,<integer m>)
 *
 * The code interfaces the function HammingCode(int m).decode(bvec <inputBitStream>) of ITPP toolbox with the scilab engine.
 *
@@ -20,7 +20,7 @@ June 1,2015
 * Input/Output Details : 
 *----------------------
 * It is expected that the user inputs a single dimension binary matrix of (0,1) and an integer m in scilab engine while calling the
-* itpp_hamm_decode() function and expect the function to return a single dimension binary matrix of (0,1) as decoded output in scilab
+* hamm_decode() function and expect the function to return a single dimension binary matrix of (0,1) as decoded output in scilab
 * console.
 */
 
@@ -42,7 +42,7 @@ June 1,2015
  
     3.  
  
--->c=itpp_hamm_decode(a,b)
+-->c=hamm_decode(a,b)
  c  =
  
     0.    0.    1.    1.    1.    0.    1.    0.  

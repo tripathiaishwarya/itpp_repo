@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<refentry version="5.0-subset Scilab" xml:id="itpp_hamm_decode" xml:lang="en"
+<refentry version="5.0-subset Scilab" xml:id="hamm_decode" xml:lang="en"
 					xmlns="http://docbook.org/ns/docbook"
 					xmlns:xlink="http://www.w3.org/1999/xlink"
 					xmlns:svg="http://www.w3.org/2000/svg"
@@ -8,7 +8,7 @@
 					xmlns:db="http://docbook.org/ns/docbook">
 
 	<refnamediv>
-		<refname>itpp_hamm_decode</refname>
+		<refname>hamm_decode</refname>
 
 		<refpurpose>Hamming Decoding</refpurpose>
 	</refnamediv>
@@ -16,7 +16,7 @@
 	<refsynopsisdiv>
 		<title>Calling Sequence</title>
 
-		<synopsis> a = itpp_hamm_decode(b,c)</synopsis>
+		<synopsis> a = hamm_decode(b,c)</synopsis>
 	</refsynopsisdiv>
 	
 	<refsection>
@@ -52,7 +52,7 @@
 	<refsection>
 		<title>Examples</title>
 
-		<programlisting role="example">b=[0 0 1 0 0 1 1 1 0 1 1 0 1 0];&#10;c=3;&#10;a=itpp_hamm_decode(b,c)</programlisting>
+		<programlisting role="example">b=[0 0 1 0 0 1 1 1 0 1 1 0 1 0];&#10;c=3;&#10;a=hamm_decode(b,c)</programlisting>
 	</refsection>
 
 	<refsection>

@@ -7,7 +7,7 @@ May 27,2015
 
 /*I/O format of the code for scilab engine
 * 
-* <outputBitStream> = itpp_psk_demod(<InputComplexVector>,<integer m>)
+* <outputBitStream> = psk_demod(<InputComplexVector>,<integer m>)
 *
 * The code interfaces the function PSK(int m).demodulate_bits(cvec <inputComplexVector>) of ITPP toolbox with the scilab engine.
 *
@@ -19,7 +19,7 @@ May 27,2015
 * Input/Output Details : 
 *----------------------
 * It is expected that the user inputs a single dimension complex matrix and an integer m in scilab engine while calling the
-* itpp_bpsk_demod() function and expect the function to return a single dimension binary matrix as output in scilab console.
+* psk_demod() function and expect the function to return a single dimension binary matrix as output in scilab console.
 */
 
 /***********Sample I/O in scilab console******************
@@ -33,7 +33,7 @@ May 27,2015
  
     8.  
  
--->c=itpp_psk_demod(a,b)
+-->c=psk_demod(a,b)
  c  =
  
     1.    0.    0.    1.    1.    0.    1.    1.    1.  

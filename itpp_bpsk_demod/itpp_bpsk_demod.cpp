@@ -5,7 +5,7 @@ May 20,2015
 ----------------------------------------------------------------------------------------------------------------*/
 /*I/O format of the code for scilab engine
 * 
-* <binaryOutputBitStream> = itpp_bpsk_demod(<inputBitStream>)
+* <binaryOutputBitStream> = bpsk_demod(<inputBitStream>)
 *
 * The code interfaces the function BPSK().demodulate_bits() of ITPP toolbox with the scilab engine.
 *
@@ -14,7 +14,7 @@ May 20,2015
 *
 * Input/Output Details : 
 *----------------------
-* It is expected that the user inputs a single dimension matrix of (-1,1) in scilab engine while calling the itpp_bpsk_demod() 
+* It is expected that the user inputs a single dimension matrix of (-1,1) in scilab engine while calling the bpsk_demod() 
 * and expect the function to return a single dimension matrix of (0,1) as output in scilab console.
 */
 
@@ -24,7 +24,7 @@ May 20,2015
  
     1.  - 1.    1.    1.  - 1.  - 1.    1.  
  
--->c=itpp_bpsk_demod(a)
+-->c=bpsk_demod(a)
  c  =
  
     0.    1.    0.    0.    1.    1.    0.  

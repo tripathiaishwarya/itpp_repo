@@ -1,10 +1,10 @@
-// Builder gateway function for Root Raised Cosine shape_symbols
+// Builder gateway function for Root Raised Cosine get_pulse_shape
 
 function builder_gw_cpp()
     WITHOUT_AUTO_PUTLHSVAR = %t;
     tbx_build_gateway("skeleton_cpp", ..
-    ["itpp_shape_symbols","itpp_shape_symbols"], ..
-    ["itpp_shape_symbols.cpp"], ..
+    ["rrc_get_pulse_shape","itpp_rrc_get_pulse_shape"], ..
+    ["itpp_rrc_get_pulse_shape.cpp"], ..
     get_absolute_file_path("builder_gateway_cpp.sce"), [], "-litpp");
 
 endfunction

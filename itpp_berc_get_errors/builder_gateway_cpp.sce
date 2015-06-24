@@ -3,7 +3,7 @@
 function builder_gw_cpp()
     WITHOUT_AUTO_PUTLHSVAR = %t;
     tbx_build_gateway("skeleton_cpp", ..
-    ["itpp_berc_get_errors","itpp_berc_get_errors"], ..
+    ["berc_get_errors","itpp_berc_get_errors"], ..
     ["itpp_berc_get_errors.cpp"], ..
     get_absolute_file_path("builder_gateway_cpp.sce"), [], "-litpp");
 

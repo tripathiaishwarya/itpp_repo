@@ -6,7 +6,7 @@ May 20,2015
 
 /*I/O format of the code for scilab engine
 * 
-* <outputBitStream> = itpp_bpsk_mod(<binaryInputBitStream>)
+* <outputBitStream> = bpsk_mod(<binaryInputBitStream>)
 *
 * The code interfaces the function BPSK().modulate_bits() of ITPP toolbox with the scilab engine.
 *
@@ -15,7 +15,7 @@ May 20,2015
 *
 * Input/Output Details : 
 *----------------------
-* It is expected that the user inputs a single dimension binary matrix of (0,1) in scilab engine while calling the itpp_bpsk_mod() 
+* It is expected that the user inputs a single dimension binary matrix of (0,1) in scilab engine while calling the bpsk_mod() 
 * and expect the function to return a single dimension matrix as output in scilab console.
 */
 
@@ -25,7 +25,7 @@ May 20,2015
  
     0.    1.    0.    1.    0.    1.  
  
--->c=itpp_bpsk_mod(a)
+-->c=bpsk_mod(a)
 
  c  =
  

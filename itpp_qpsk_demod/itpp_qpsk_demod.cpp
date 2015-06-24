@@ -7,7 +7,7 @@ May 27,2015
 
 /*I/O format of the code for scilab engine
 * 
-* <outputComplexVector> = itpp_qpsk_demod(<binaryInputBitStream>)
+* <outputComplexVector> = qpsk_demod(<binaryInputBitStream>)
 *
 * The code interfaces the function QPSK().demodulate_bits() of ITPP toolbox with the scilab engine.
 *
@@ -16,7 +16,7 @@ May 27,2015
 *
 * Input/Output Details : 
 *----------------------
-* It is expected that the user inputs a single dimension complex matrix in scilab engine while calling the itpp_bpsk_mod() 
+* It is expected that the user inputs a single dimension complex matrix in scilab engine while calling the qpsk_mod() 
 * and expect the function to return a single dimension binary matrix of (0,1) as output in scilab console.
 */
 
@@ -26,7 +26,7 @@ May 27,2015
  
     1.    i    - i    - 1.  
  
--->c=itpp_qpsk_demod(a)
+-->c=qpsk_demod(a)
  c  =
  
     0.    0.    0.    1.    1.    0.    1.    1.  

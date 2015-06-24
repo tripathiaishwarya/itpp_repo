@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<refentry version="5.0-subset Scilab" xml:id="itpp_berc_get_errors" xml:lang="en"
+<refentry version="5.0-subset Scilab" xml:id="berc_get_errors" xml:lang="en"
 					xmlns="http://docbook.org/ns/docbook"
 					xmlns:xlink="http://www.w3.org/1999/xlink"
 					xmlns:svg="http://www.w3.org/2000/svg"
@@ -8,7 +8,7 @@
 					xmlns:db="http://docbook.org/ns/docbook">
 
 	<refnamediv>
-		<refname>itpp_berc_get_errors</refname>
+		<refname>berc_get_errors</refname>
 
 		<refpurpose>BERC get errors</refpurpose>
 	</refnamediv>
@@ -16,7 +16,7 @@
 	<refsynopsisdiv>
 		<title>Calling Sequence</title>
 
-		<synopsis> a = itpp_berc_get_errors(b,c)</synopsis>
+		<synopsis> a = berc_get_errors(b,c)</synopsis>
 	</refsynopsisdiv>
 	
 	<refsection>
@@ -43,7 +43,7 @@
 	
 		<para>The function gives the number of bit errors in the two input bitstreams.</para>
 
-		<para>It is expected that the user inputs two binary arrays of (0,1) in scilab engine while calling the itpp_berc_get_errors() and expect the function to return the error count of the two bitstreams as output in scilab console.
+		<para>It is expected that the user inputs two binary arrays of (0,1) in scilab engine while calling the berc_get_errors() and expect the function to return the error count of the two bitstreams as output in scilab console.
 		</para>
 		
 	</refsection>
@@ -51,7 +51,7 @@
 	<refsection>
 		<title>Examples</title>
 
-		<programlisting role="example">b=[1 0 0 1 1 0];&#10;c=[1 1 0 0 1 1];&#10;a=itpp_berc_get_errors(b,c)</programlisting>
+		<programlisting role="example">b=[1 0 0 1 1 0];&#10;c=[1 1 0 0 1 1];&#10;a=berc_get_errors(b,c)</programlisting>
 	</refsection>
 
 	<refsection>

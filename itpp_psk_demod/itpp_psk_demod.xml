@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<refentry version="5.0-subset Scilab" xml:id="itpp_psk_demod" xml:lang="en"
+<refentry version="5.0-subset Scilab" xml:id="psk_demod" xml:lang="en"
 					xmlns="http://docbook.org/ns/docbook"
 					xmlns:xlink="http://www.w3.org/1999/xlink"
 					xmlns:svg="http://www.w3.org/2000/svg"
@@ -8,7 +8,7 @@
 					xmlns:db="http://docbook.org/ns/docbook">
 
 	<refnamediv>
-		<refname>itpp_psk_demod</refname>
+		<refname>psk_demod</refname>
 
 		<refpurpose>PSK demodulation</refpurpose>
 	</refnamediv>
@@ -16,7 +16,7 @@
 	<refsynopsisdiv>
 		<title>Calling Sequence</title>
 
-		<synopsis> a = itpp_psk_demod(b,c)</synopsis>
+		<synopsis> a = psk_demod(b,c)</synopsis>
 	</refsynopsisdiv>
 	
 	<refsection>
@@ -52,7 +52,7 @@
 	<refsection>
 		<title>Examples</title>
 
-		<programlisting role="example">b=[-%i %i 1];&#10;c=4;&#10;a=itpp_psk_demod(b,c)</programlisting>
+		<programlisting role="example">b=[-%i %i 1];&#10;c=4;&#10;a=psk_demod(b,c)</programlisting>
 	</refsection>
 
 	<refsection>

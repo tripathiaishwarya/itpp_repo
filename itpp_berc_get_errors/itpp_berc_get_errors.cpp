@@ -6,7 +6,7 @@ June 10,2015
 
 /*I/O format of the code for scilab engine
 * 
-* <outputErrorCount> = itpp_berc_get_errors(<binaryInputBitStream1>,<inputBitStream2>)
+* <outputErrorCount> = berc_get_errors(<binaryInputBitStream1>,<inputBitStream2>)
 *
 * The code interfaces the function BERC().get_errors() of ITPP toolbox with the scilab engine.
 *
@@ -15,7 +15,7 @@ June 10,2015
 *
 * Input/Output Details : 
 *----------------------
-* It is expected that the user inputs two binary arrays of (0,1) in scilab engine while calling the itpp_berc_get_errors() 
+* It is expected that the user inputs two binary arrays of (0,1) in scilab engine while calling the berc_get_errors() 
 * and expect the function to return the error count of the two bitstreams as output in scilab console.
 */
 
@@ -30,7 +30,7 @@ June 10,2015
  
     1.    1.    0.    0.    1.    1.  
  
--->c=itpp_berc_get_errors(a,b)
+-->c=berc_get_errors(a,b)
  c  =
  
     3.  

@@ -7,7 +7,7 @@ June 10,2015
 
 /*I/O format of the code for scilab engine
 * 
-* <outputDeinterleavedSymbols> = itpp_seq_deinterleaver(<inputInterleavedstream>,<interleaver_depth>)
+* <outputDeinterleavedSymbols> = seq_deinterleaver(<inputInterleavedstream>,<interleaver_depth>)
 *
 * The code interfaces the function Sequence_Interleaver().deinterleave() of ITPP toolbox with the scilab engine.
 *
@@ -20,7 +20,7 @@ June 10,2015
 * Input/Output Details : 
 *----------------------
 * It is expected that the user inputs a array of interleaved symbols and an integer interleaver_depth in scilab engine while calling the
-* itpp_seq_deinterleaver() function and expect the function to return the deinterleaved vector as output in scilab console.
+* seq_deinterleaver() function and expect the function to return the deinterleaved vector as output in scilab console.
 */
 
 /***********Sample I/O in scilab console******************
@@ -28,7 +28,7 @@ June 10,2015
  
 -->c=4;
  
--->a=itpp_seq_deinterleaver(b,c)
+-->a=seq_deinterleaver(b,c)
  a  =
  
     1.    2.    3.    4.    5.    6.    7.    8.  

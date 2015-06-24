@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<refentry version="5.0-subset Scilab" xml:id="itpp_seq_deinterleaver" xml:lang="en"
+<refentry version="5.0-subset Scilab" xml:id="seq_deinterleaver" xml:lang="en"
 					xmlns="http://docbook.org/ns/docbook"
 					xmlns:xlink="http://www.w3.org/1999/xlink"
 					xmlns:svg="http://www.w3.org/2000/svg"
@@ -8,7 +8,7 @@
 					xmlns:db="http://docbook.org/ns/docbook">
 
 	<refnamediv>
-		<refname>itpp_seq_deinterleaver</refname>
+		<refname>seq_deinterleaver</refname>
 
 		<refpurpose>Sequence Deinterleaver</refpurpose>
 	</refnamediv>
@@ -16,7 +16,7 @@
 	<refsynopsisdiv>
 		<title>Calling Sequence</title>
 
-		<synopsis> a = itpp_seq_deinterleaver(b,c)</synopsis>
+		<synopsis> a = seq_deinterleaver(b,c)</synopsis>
 	</refsynopsisdiv>
 	
 	<refsection>
@@ -44,7 +44,7 @@
 		<para>This function implements Sequence Deinterleaving on input bit stream
 		</para>
 
-		<para>It is expected that the user inputs a array of input interleaved symbols and an integer interleaver_depth in scilab engine while calling the itpp_seq_deinterleaver() function and expect the function to return the deinterleaved vector as output in scilab console.
+		<para>It is expected that the user inputs a array of input interleaved symbols and an integer interleaver_depth in scilab engine while calling the seq_deinterleaver() function and expect the function to return the deinterleaved vector as output in scilab console.
 		</para>
 		
 	</refsection>
@@ -52,7 +52,7 @@
 	<refsection>
 		<title>Examples</title>
 
-		<programlisting role="example">b=[3 4 1 2 7 8 5 6];&#10;c=4;&#10;a=itpp_seq_deinterleaver(b,c)</programlisting>
+		<programlisting role="example">b=[3 4 1 2 7 8 5 6];&#10;c=4;&#10;a=seq_deinterleaver(b,c)</programlisting>
 	</refsection>
 
 	<refsection>

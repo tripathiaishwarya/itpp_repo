@@ -7,7 +7,7 @@ June 10,2015
 
 /*I/O format of the code for scilab engine
 * 
-* <outputPulseShape> = itpp_shape_symbols(<inputSymbols>double roll_off_factor, int filter_length, int upsampling_factor)
+* <outputPulseShape> = rrc_shape_symbols(<inputSymbols>double roll_off_factor, int filter_length, int upsampling_factor)
 *
 * The code interfaces the function Root_Raised_Cosine<double>(roll_off_factor, filter_length, upsampling_factor).shape_symbols(vec inputSymbols) of ITPP toolbox with the scilab engine.
 *
@@ -20,7 +20,7 @@ June 10,2015
 * Input/Output Details : 
 *----------------------
 * It is expected that the user inputs input symbols vector of {1,-1,} roll off factor, filter length and upsampling factor in scilab
-* engine while calling the itpp_shape_symbols() function and expect the function to return pulse shape vector as output in scilab console.
+* engine while calling the rrc_shape_symbols() function and expect the function to return pulse shape vector as output in scilab console.
 */
 
 
@@ -45,7 +45,7 @@ June 10,2015
  
     8.  
  
--->a=itpp_shape_symbols(b,c,d,e)
+-->a=rrc_shape_symbols(b,c,d,e)
  a  =
  
  
@@ -101,7 +101,7 @@ extern "C"
 
 /*=================================================================*/
 
-int itpp_shape_symbols(char *fname, unsigned long fname_len)
+int itpp_rrc_shape_symbols(char *fname, unsigned long fname_len)
 {
 	//Error management variable
 	SciErr sciErr;

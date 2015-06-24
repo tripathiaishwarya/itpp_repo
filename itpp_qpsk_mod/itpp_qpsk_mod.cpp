@@ -6,7 +6,7 @@ May 27,2015
 
 /*I/O format of the code for scilab engine
 * 
-* <outputComplexVector> = itpp_qpsk_mod(<binaryInputBitStream>)
+* <outputComplexVector> = qpsk_mod(<binaryInputBitStream>)
 *
 * The code interfaces the function QPSK().modulate_bits() of ITPP toolbox with the scilab engine.
 *
@@ -15,7 +15,7 @@ May 27,2015
 *
 * Input/Output Details : 
 *----------------------
-* It is expected that the user inputs a single dimension binary matrix of (0,1) in scilab engine while calling the itpp_qpsk_mod() 
+* It is expected that the user inputs a single dimension binary matrix of (0,1) in scilab engine while calling the qpsk_mod() 
 * and expect the function to return a single dimension complex matrix as output in scilab console.
 */
 
@@ -25,7 +25,7 @@ May 27,2015
  
     0.    0.    0.    1.    1.    0.    1.    1.  
  
--->c=itpp_qpsk_mod(a)
+-->c=qpsk_mod(a)
  c  =
  
     1.    i    - i    - 1.  

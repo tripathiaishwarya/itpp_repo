@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------------------------------------------
-Code for BPSK Modulation
+Code for PSK Modulation
 Aishwarya Tripathi
 May 27,2015
 ----------------------------------------------------------------------------------------------------------------*/
@@ -7,7 +7,7 @@ May 27,2015
 
 /*I/O format of the code for scilab engine
 * 
-* <outputComplexVector> = itpp_psk_mod(<binaryInputBitStream>,<integer m>)
+* <outputComplexVector> = psk_mod(<binaryInputBitStream>,<integer m>)
 *
 * The code interfaces the function PSK(int m).modulate_bits(bvec <inputVector>) of ITPP toolbox with the scilab engine.
 *
@@ -20,7 +20,7 @@ May 27,2015
 * Input/Output Details : 
 *----------------------
 * It is expected that the user inputs a single dimension binary matrix of (0,1) and an integer m in scilab engine while calling the
-* itpp_bpsk_mod() function and expect the function to return a single dimension complex matrix as output in scilab console.
+* psk_mod() function and expect the function to return a single dimension complex matrix as output in scilab console.
 */
 
 /***********Sample I/O in scilab console******************
@@ -34,7 +34,7 @@ May 27,2015
  
     8.  
  
--->c=itpp_psk_mod(a,b)
+-->c=psk_mod(a,b)
  c  =
  
     0.7071068 - 0.7071068i  - 1.  - 0.7071068 - 0.7071068i  

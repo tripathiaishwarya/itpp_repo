@@ -7,7 +7,7 @@ June 4,2015
 
 /*I/O format of the code for scilab engine
 * 
-* <outputBitStream> = itpp_crc_encode(<InputBitStream>,<string>)
+* <outputBitStream> = crc_encode(<InputBitStream>,<string>)
 *
 * The code interfaces the function CRC_Code(<string>).encode(bvec <inputBitStream>) of ITPP toolbox with the scilab engine.
 *
@@ -20,7 +20,7 @@ June 4,2015
 * Input/Output Details : 
 *----------------------
 * It is expected that the user inputs a single dimension binary matrix of (0,1) and a string in scilab engine while calling the
-* itpp_crc_encode() function and expect the function to return a single dimension binary matrix of (0,1) as encoded output in scilab
+* crc_encode() function and expect the function to return a single dimension binary matrix of (0,1) as encoded output in scilab
 * console.
 */
 
@@ -35,7 +35,7 @@ June 4,2015
  
  CRC-4   
  
--->c=itpp_crc_encode(a,b)
+-->c=crc_encode(a,b)
  c  =
  
     1.    0.    0.    1.    1.    0.    1.    1.    0.    0.  

@@ -3,7 +3,7 @@
 function builder_gw_cpp()
     WITHOUT_AUTO_PUTLHSVAR = %t;
     tbx_build_gateway("skeleton_cpp", ..
-    ["itpp_qpsk_mod","itpp_qpsk_mod"], ..
+    ["qpsk_mod","itpp_qpsk_mod"], ..
     ["itpp_qpsk_mod.cpp"], ..
     get_absolute_file_path("builder_gateway_cpp.sce"), [], "-litpp");
 
